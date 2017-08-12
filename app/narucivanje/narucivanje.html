@@ -1,0 +1,31 @@
+<h1> Potvrda vaše kupovine: </h1>
+
+<form role="form" [ngFormModel]="narucivanjeForm">
+
+  <div class="form-group">
+     <label for="username">Poštovani:</label>
+     <input type="text" class="form-control" ngControl='username' disabled>
+   </div>
+   <br/>
+   <p> <strong> Da li ste sigurni da želite da naručite knjigu: </strong> </p>
+   <br/>
+   <div class="form-group">
+    <label for="naziv_knjige">Naziv knjige:</label>
+    <input type="text" class="form-control"  ngControl='naziv_knjige' disabled>
+  </div>
+ <div class="form-group">
+    <label for="naziv_zanr">Zanr:</label>
+    <input type="text" class="form-control" ngControl='naziv_zanr' disabled>
+  </div>
+   
+  <div class="form-group">
+    <label for="opis">Opis:</label>
+    <input type="text" class="form-control"  ngControl='opis' disabled>
+  </div>
+  <div class="form-group">
+    <label for="cena">Cena:</label>
+    <input type="text" class="form-control" ngControl='cena' disabled>
+  </div>
+<button  (click)="send()"class="btn btn-primary">Potvrdi</button>
+
+</form>

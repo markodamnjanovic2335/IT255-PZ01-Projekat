@@ -1,0 +1,41 @@
+
+
+
+<div class="col-lg-12">
+	<table  class="display" cellspacing="0" >
+	    <thead>
+            <tr>
+
+                <th>Ime: </th>
+                <th>Prezime: </th>
+				      <th>Username: </th>
+							<th>E-adresa: </th>
+                <th>Ulica: </th>
+				 			<th>Telefon: </th>
+         		<th>Obriši profil: </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="#sp of spisak">
+
+                <td>{{sp.firstname}}</td>
+                <td>{{sp.lastname}}</td>
+				<td>{{sp.username}}</td>
+				<td>{{sp.adresa}}</td>
+        <td>{{sp.ulica}}</td>
+        <td>{{sp.telefon}}</td>
+				 <td>
+                  <button class="btn btn-danger" title="remove" (click)="remove(sp.korisnici_ID)">
+
+
+
+                      <span class="glyphicon glyphicon-remove"></span>
+
+                   </button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

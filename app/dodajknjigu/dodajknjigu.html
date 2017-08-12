@@ -1,0 +1,100 @@
+<style>
+
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: 'Oxygen', sans-serif;
+}
+
+.main{
+ 	margin-top: 70px;
+}
+
+h1.title {
+	font-size: 50px;
+	font-family: 'Passion One', cursive;
+	font-weight: 400;
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+ select {
+
+    min-width:205px;
+    min-height: 25px;
+    border-width: 3px;
+    border-color: rgba(50, 50, 50, 0.14);
+    margin: 10px 10px 10px 0px;
+}
+
+</style>
+
+<form role="form" [ngFormModel]="addForm">
+
+
+  <div class="form-group">
+    <label for="naziv_knjige">Naziv knjige:</label>
+	<input type="text" class="form-control" ngControl='naziv_knjige'>
+  </div>
+ <div class="form-group">
+    <label for="autor">Autor:</label>
+  <input type="text" class="form-control" ngControl='autor'>
+</div>
+  <div class="form-group">
+   <label for="zanr">Žanr:</label>
+  <select #selectOption (change)='select=selectOption.value' class="form-control" ng-selected="Yes" >
+    <option *ngFor="#zanr of zanrovi" [value]="zanr.ID">{{zanr.naziv_zanr}} </option>
+  </select>
+  </div>
+   <div class="form-group">
+    <label for="opis">Opis knjige:</label>
+    <input type="text" class="form-control" ngControl='opis'>
+  </div>
+
+
+   <div class="form-group">
+    <label for="cena">Cena knjige:</label>
+    <input type="text" class="form-control" ngControl='cena'>
+  </div>
+
+
+  <button (click)="onAdd()" class="btn btn-primary" >Dodaj knjigu </button>
+</form>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
